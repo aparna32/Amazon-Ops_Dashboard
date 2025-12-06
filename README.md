@@ -1,23 +1,60 @@
-# Amazon Ops Dashboard
+# **E-Commerce Operations Dashboard**
 
-Power BI and SQL–based dashboard to monitor Amazon-style operations including orders, SLAs, and delays.
+Power BI and SQL–based dashboard to monitor e-commerce operations including orders, delivery performance, SLAs, and delays.
 
-## Overview
-This project simulates Amazon-style operations analytics using SQL and Power BI.  
-It focuses on identifying bottlenecks, tracking SLAs, and generating insights to improve decision-making and operational efficiency.
+## **Overview**
+This project focuses on analysing fulfilment performance using structured datasets and a Power BI dashboard.  
+It highlights delivery delays, SLA breaches, product-level issues, and operational bottlenecks to support decision-making across supply chain and customer operations.
 
-## Features
-- Order management KPIs  
-- SLA tracking  
-- Delay analysis  
-- Bottleneck identification  
-- Automated insights  
+## **Features**
+- Order volume tracking  
+- SLA compliance monitoring  
+- Delay and breach analysis  
+- Product-level performance insights  
+- Calendar-based trend analysis  
+- Interactive slicers (date and product)
 
-## Tools Used
-- SQL  
+## **Tools Used**
 - Power BI  
-- Excel  
+- SQL  
 - DAX  
+- Excel (CSV data source)
 
-## Status
-In progress (Day 0 setup)
+## **Data Model**
+Star schema using one fact table and two dimensions:
+
+```
+Calendar → sample_orders ← Products
+```
+
+## **DAX Measures**
+Core measures used in the dashboard:
+
+```DAX
+Total Orders =
+    COUNT(sample_orders[order_id])
+```
+
+```DAX
+Average Delay =
+    AVERAGE(sample_orders[DelayDays])
+```
+
+```DAX
+SLA Breach Count =
+    COUNTROWS(
+        FILTER(
+            sample_orders,
+            sample_orders[DelayDays] > sample_orders[sla_days]
+        )
+    )
+```
+
+## **Status**
+Dashboard structure completed — KPIs, visuals, data model, and relationships implemented.  
+Further enhancements planned in upcoming iterations.
+
+## **Summary**
+This project demonstrates end-to-end development of an operational analytics dashboard using Power BI.  
+It covers data modeling, DAX measure creation, and visual reporting aligned with common e-commerce fulfilment metrics.  
+The structure provides a foundation for more advanced analysis such as forecasting, MoM trends, and drill-down reporting.
