@@ -1,0 +1,5 @@
+product_id,product_name,category,sla_days
+501,Laptop,Electronics,3
+502,Keyboard,Electronics,2
+503,Headphones,Electronics,2
+504,Tablet,Electronics,4
