@@ -1,10 +1,10 @@
 E-Commerce Operations Dashboard
 
-This project presents an operational performance dashboard developed in Power BI to monitor order fulfilment in an e-commerce environment. The report supports decision-making for supply chain, last-mile delivery, and customer operations teams by highlighting delivery delays, SLA adherence, daily order volume patterns, and product-level issues.
+This project presents an operational performance dashboard developed in Power BI to monitor order fulfilment in an e-commerce environment. The report highlights delivery delays, SLA adherence, order volume trends, and product-level issues, enabling informed decision-making for supply chain and customer operations teams.
 
 Project Objectives
 
-The dashboard is designed to answer key operational questions:
+This dashboard addresses key operational questions:
 
 Are delivery SLAs being met consistently?
 
@@ -14,27 +14,25 @@ Which products or categories contribute most to SLA breaches?
 
 How do daily order volumes vary over time?
 
-Where are the operational bottlenecks affecting fulfilment performance?
+What operational bottlenecks are affecting fulfilment performance?
 
-The report provides a consolidated view of trends that impact customer satisfaction and operational efficiency.
+The aim is to provide a consolidated overview of metrics that influence customer satisfaction and operational efficiency.
 
 Tools and Technologies
 
 Power BI Desktop
 
-Data Modeling (Star Schema)
+DAX (for KPI calculations)
 
-DAX for KPI calculations
+SQL (table structure and schema definitions)
 
-SQL (table definitions and structure)
+Star schema data modeling
 
 CSV datasets
 
 GitHub for version control
 
-Data Model
-
-A star schema was implemented to ensure clean relationships and scalable reporting.
+A star schema was implemented to maintain clarity, scalability, and efficient filtering.
 
 Calendar (1) ───────────────┐
                              │
@@ -44,14 +42,13 @@ Calendar (1) ───────────────┐
                              │
 products (1) ───────────────┘
 
-
-Key relationships:
+Key Relationships:
 
 Calendar[Date] → sample_orders[order_date]
 
 products[product_id] → sample_orders[product_id]
 
-The model enables accurate slicing, filtering, and time intelligence calculations.
+This structure supports correct time intelligence calculations and product-level analysis
 
 Dashboard Components
 KPI Indicators
@@ -62,23 +59,21 @@ Average Delivery Delay (Days)
 
 SLA Breach Count
 
-Visuals
+Visuals Included
 
 Orders Over Time (line chart)
 
 SLA Breaches by Product (bar chart)
 
-Detailed table of delayed orders
+Detailed Delayed Orders table
 
 Date and product slicers for interactive filtering
 
 Core DAX Measures
 Total Orders =
     COUNT(sample_orders[order_id])
-
 Average Delay =
     AVERAGE(sample_orders[DelayDays])
-
 SLA Breach Count =
     COUNTROWS(
         FILTER(
@@ -86,9 +81,7 @@ SLA Breach Count =
             sample_orders[DelayDays] > sample_orders[sla_days]
         )
     )
-
-
-These measures support the main KPIs and visual components.
+These measures drive the operational KPIs displayed in the report.
 
 Repository Structure
 /data
@@ -109,28 +102,34 @@ Repository Structure
 README.md
 
 How to Use
-Option 1: Download the PBIX
+Option 1: Download the PBIX File
 
-Navigate to the /powerbi folder and download Amazon_Ops_Dashboard.pbix to view the complete report in Power BI Desktop.
+Navigate to the /powerbi folder and download Amazon_Ops_Dashboard.pbix to open the dashboard in Power BI Desktop.
 
-Option 2: Rebuild the Report
+Option 2: Recreate the Report Manually
 
-Import the CSV files from the /data folder, recreate the relationships described above, and add the DAX measures included in this README.
+Import the CSV files from /data
+
+Rebuild the star schema using the defined relationships
+
+Add the DAX measures provided above
+
+Recreate the visuals following the dashboard layout
 
 Future Enhancements
 
-Additional delivery performance metrics (e.g., on-time delivery rate)
+On-time delivery percentage metric
 
 Month-over-month and year-to-date trend analysis
 
 Drill-through pages for product-level investigation
 
-Forecasting models for delay probability
+Forecasting models for delay likelihood
 
-Row-level security scenarios
+Row-level security configurations
 
-Integration with larger datasets for expanded operational reporting
+Expansion using larger datasets for deeper operational reporting
 
 Summary
 
-This project demonstrates the development of a structured operational dashboard using Power BI, from data modeling through visual design and KPI creation. It reflects practical experience with BI tools and an understanding of core operational metrics in an e-commerce context.
+This project demonstrates end-to-end dashboard development using Power BI, incorporating structured data modeling, DAX-based KPI creation, and operational reporting. It reflects practical analytical skills relevant to real e-commerce and supply chain environments.
