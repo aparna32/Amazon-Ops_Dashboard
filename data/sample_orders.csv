@@ -1,0 +1,6 @@
+order_id,order_date,customer_id,product_id,order_status,dispatch_date,delivery_date,sla_days
+1,2025-01-01,1001,501,Delivered,2025-01-02,2025-01-05,3
+2,2025-01-02,1002,502,Delayed,2025-01-03,2025-01-09,3
+3,2025-01-03,1003,501,Delivered,2025-01-04,2025-01-04,3
+4,2025-01-04,1004,503,Pending,,,3
+5,2025-01-05,1005,504,Delivered,2025-01-06,2025-01-08,2
