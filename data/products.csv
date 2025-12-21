@@ -9,7 +9,6 @@ product_id,product_name,category,sla_days
 508,Webcam,Electronics,3
 509,External Hard Drive,Electronics,3
 510,USB Hub,Electronics,2
-
 601,Office Chair,Furniture,5
 602,Study Table,Furniture,6
 603,Bookshelf,Furniture,7
@@ -18,7 +17,6 @@ product_id,product_name,category,sla_days
 606,Footrest,Furniture,5
 607,Drawer Unit,Furniture,6
 608,Whiteboard,Furniture,5
-
 701,Water Bottle,Accessories,2
 702,Backpack,Accessories,3
 703,Notebook Set,Accessories,2
