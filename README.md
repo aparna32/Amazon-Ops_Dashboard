@@ -117,26 +117,29 @@ All SQL logic used for KPI validation is available in `/sql/kpi_queries.sql`.
 Amazon-Ops_Dashboard/
 │
 ├── data/
-│   ├── products.csv
-│   └── sample_orders.csv
+│ ├── products.csv
+│ └── sample_orders.csv
 │
 ├── sql/
-│   └── kpi_queries.sql
+│ ├── customers_table.sql
+│ ├── products_table.sql
+│ ├── orders_table.sql
+│ ├── kpi_queries.sql
+│ └── vw_order_kpis.sql
 │
 ├── powerbi/
-│   └── Amazon_Ops_Dashboard.pbix
+│ └── Amazon_Ops_Dashboard.pbix
 │
 ├── screenshots/
-│   ├── Executive Summary.png
-│   ├── delivery Performance.png
-│   └── Backlog & SLA Risk Analysis.png
+│ ├── Executive_Summary.png
+│ ├── Delivery_Performance.png
+│ └── Backlog_SLA.png
 │
 ├── docs/
-│   ├── dashboard_plan.md
-│   └── dashboard_plan_v2.md
+│ └── dashboard_planning.md
 │
-├── README.md
 ├── LICENSE
+└── README.md
 ```
 ---
 
