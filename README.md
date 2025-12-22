@@ -113,7 +113,7 @@ All SQL logic used for KPI validation is available in `/sql/kpi_queries.sql`.
 ---
 
 ## 📁 Repository Structure
-
+```text
 Amazon-Ops_Dashboard/
 │
 ├── data/
