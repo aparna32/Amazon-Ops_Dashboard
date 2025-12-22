@@ -127,9 +127,9 @@ Amazon-Ops_Dashboard/
 │   └── Amazon_Ops_Dashboard.pbix
 │
 ├── screenshots/
-│   ├── executive_summary.png
-│   ├── delivery_performance.png
-│   └── backlog_sla.png
+│   ├── Executive Summary.png
+│   ├── delivery Performance.png
+│   └── Backlog & SLA Risk Analysis.png
 │
 ├── docs/
 │   ├── dashboard_plan.md
